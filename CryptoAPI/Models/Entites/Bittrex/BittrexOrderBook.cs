@@ -12,7 +12,7 @@ namespace CryptoAPI.Models.Entites.Bittrex
 
         public ICollection<BittrexOrder> Orders { get; set; }
 
-        BittrexOrderBook()
+        public BittrexOrderBook()
         {
             Orders=new List<BittrexOrder>();
         }

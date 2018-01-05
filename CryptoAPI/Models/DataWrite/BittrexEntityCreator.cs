@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Linq;
 using CryptoAPI.Models.Contexts;
 using CryptoAPI.Models.Entites;
@@ -37,11 +38,32 @@ namespace CryptoAPI.Models.DataWrite
                         Name = name
                     };
                     var exchange = db.Exchanges.Where(p => p.Name == BittrexContext.ExchangeName).ToList()[0];
-                    market.Exchange=exchange;
                     market.ExchangeId = exchange.Id;
                 }
             }
             return market;
+        }
+
+        public BittrexOrderBook GetOrderBook(BittrexOrderBookWrapper wrapper)
+        {
+            BittrexOrderBook result = new BittrexOrderBook {TimeStamp = DateTime.Now};
+
+            foreach (var order in wrapper.Orders)
+            {
+                result.Orders.Add(new BittrexOrder(){OrderType = order.OrderType=="buy"?OrderType.Buy:OrderType.Sell,Quantity = order.Quantity,Rate = order.Rate,OrderBook = result});
+            }
+
+            Market market= GetMarketByName(wrapper.MarketName);
+            if (market.Id != 0)
+            {
+                result.MarketId = market.Id;
+            }
+            else
+            {
+                result.Market = market;
+            }
+
+            return result;
         }
     }
 }

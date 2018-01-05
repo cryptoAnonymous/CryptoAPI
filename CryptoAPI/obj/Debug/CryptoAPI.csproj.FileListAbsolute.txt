@@ -161,7 +161,6 @@ D:\Projects\CryptoAPI\CryptoAPI\bin\ru\System.Web.Razor.resources.dll
 D:\Projects\CryptoAPI\CryptoAPI\bin\ru\System.Web.WebPages.resources.dll
 D:\Projects\CryptoAPI\CryptoAPI\bin\ru\System.Web.WebPages.Deployment.resources.dll
 D:\Projects\CryptoAPI\CryptoAPI\bin\ru\System.Web.WebPages.Razor.resources.dll
-D:\Projects\CryptoAPI\CryptoAPI\obj\Debug\CryptoAPI.csprojResolveAssemblyReference.cache
 D:\Projects\CryptoAPI\CryptoAPI\obj\Debug\CryptoAPI.csproj.CoreCompileInputs.cache
 D:\Projects\CryptoAPI\CryptoAPI\obj\Debug\CryptoAPI.dll
 D:\Projects\CryptoAPI\CryptoAPI\obj\Debug\CryptoAPI.pdb
@@ -169,3 +168,4 @@ D:\Projects\CryptoAPI\CryptoAPI\bin\EntityFramework.dll
 D:\Projects\CryptoAPI\CryptoAPI\bin\EntityFramework.SqlServer.dll
 D:\Projects\CryptoAPI\CryptoAPI\bin\EntityFramework.xml
 D:\Projects\CryptoAPI\CryptoAPI\bin\EntityFramework.SqlServer.xml
+D:\Projects\CryptoAPI\CryptoAPI\obj\Debug\CryptoAPI.csprojResolveAssemblyReference.cache

@@ -190,14 +190,19 @@
     </Compile>
     <Compile Include="Models\Contexts\BittrexContext.cs" />
     <Compile Include="Models\Contexts\Initializers\BittrexInitializer.cs" />
-    <Compile Include="Models\DataWrite\BittrexDataWriter.cs" />
+    <Compile Include="Models\DataWrite\Writers\BittrexOrderWriterStarter.cs" />
+    <Compile Include="Models\DataWrite\Writers\BittrexSummariesWriter.cs" />
     <Compile Include="Models\DataWrite\BittrexEntityCreator.cs" />
+    <Compile Include="Models\DataWrite\Writers\BittrexOrdersWriter.cs" />
+    <Compile Include="Models\DataWrite\Writers\Writer.cs" />
     <Compile Include="Models\Entites\Bittrex\BittrexOrderBook.cs" />
     <Compile Include="Models\Entites\Bittrex\BittrexOrder.cs" />
     <Compile Include="Models\Entites\Bittrex\OrderType.cs" />
     <Compile Include="Models\Entites\Exchange.cs" />
     <Compile Include="Models\Entites\Market.cs" />
     <Compile Include="Models\Exchanges\Bittrex\DataGetters\BittrexDataGetter.cs" />
+    <Compile Include="Models\Exchanges\Bittrex\JsonWrappers\BittrexOrderBookWrapper.cs" />
+    <Compile Include="Models\Exchanges\Bittrex\JsonWrappers\BittrexOrderWrapper.cs" />
     <Compile Include="Models\Exchanges\Bittrex\JsonWrappers\BittrexSummaryWrapper.cs" />
     <Compile Include="Models\Exchanges\Response.cs" />
     <Compile Include="Models\Entites\Bittrex\BittrexSummaryEntity.cs" />

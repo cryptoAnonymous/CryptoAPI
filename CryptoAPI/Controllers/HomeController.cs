@@ -8,7 +8,7 @@ namespace CryptoAPI.Controllers
         public ActionResult Index()
         {
             ViewBag.Title = "Home Page";
-            var test = new BittrexDataGetter().GetEntity("BTC", "LTC");
+            var test = new BittrexDataGetter();
             return View(test);
         }
     }

@@ -2,6 +2,6 @@
 {
     public enum OrderType
     {
-        Buy,Cell
+        Buy,Sell
     }
 }
