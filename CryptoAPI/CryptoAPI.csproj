@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -181,9 +188,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Contexts\BittrexContext.cs" />
+    <Compile Include="Models\Contexts\Initializers\BittrexInitializer.cs" />
+    <Compile Include="Models\DataWrite\BittrexDataWriter.cs" />
+    <Compile Include="Models\DataWrite\BittrexEntityCreator.cs" />
+    <Compile Include="Models\Entites\Bittrex\BittrexOrderBook.cs" />
+    <Compile Include="Models\Entites\Bittrex\BittrexOrder.cs" />
+    <Compile Include="Models\Entites\Bittrex\OrderType.cs" />
+    <Compile Include="Models\Entites\Exchange.cs" />
+    <Compile Include="Models\Entites\Market.cs" />
     <Compile Include="Models\Exchanges\Bittrex\DataGetters\BittrexDataGetter.cs" />
+    <Compile Include="Models\Exchanges\Bittrex\JsonWrappers\BittrexSummaryWrapper.cs" />
     <Compile Include="Models\Exchanges\Response.cs" />
-    <Compile Include="Models\Exchanges\Bittrex\Entities\BittrexSummaryEntity.cs" />
+    <Compile Include="Models\Entites\Bittrex\BittrexSummaryEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

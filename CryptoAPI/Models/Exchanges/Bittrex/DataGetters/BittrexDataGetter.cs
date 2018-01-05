@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using System.Web.Mvc;
-using CryptoAPI.Models.Exchanges.Bittrex.Entities;
+using CryptoAPI.Models.Entites.Bittrex;
+using CryptoAPI.Models.Exchanges.Bittrex.JsonWrappers;
 using Newtonsoft.Json;
 
 namespace CryptoAPI.Models.Exchanges.Bittrex.DataGetters
 {
     public class BittrexDataGetter
     {
-        public BittrexSummaryEntity GetEntity(string firstCoin, string secondCoin)
+        public BittrexSummaryWrapper GetEntity(string firstCoin, string secondCoin)
         {
             string result = GetCoinSummary(firstCoin, secondCoin);
             if (result != string.Empty)
             {
-                return JsonConvert.DeserializeObject<BittrexSummaryEntity>(result);
+                return JsonConvert.DeserializeObject<BittrexSummaryWrapper>(result);
             }
             else
             {
@@ -22,13 +22,13 @@ namespace CryptoAPI.Models.Exchanges.Bittrex.DataGetters
             }
         }
 
-        public List<BittrexSummaryEntity> GetEntities()
+        public List<BittrexSummaryWrapper> GetEntities()
         {
             IEnumerable<string> jsonCoins = GetCoinSummaries();
-            List<BittrexSummaryEntity> coins = new List<BittrexSummaryEntity>(100);
+            List<BittrexSummaryWrapper> coins = new List<BittrexSummaryWrapper>(100);
             foreach (string jsonCoin in jsonCoins)
             {
-                coins.Add(JsonConvert.DeserializeObject<BittrexSummaryEntity>(jsonCoin));
+                coins.Add(JsonConvert.DeserializeObject<BittrexSummaryWrapper>(jsonCoin));
             }
             return coins;
         }
@@ -55,7 +55,8 @@ namespace CryptoAPI.Models.Exchanges.Bittrex.DataGetters
             foreach (Match match in Regex.Matches(response.Substring(response.IndexOf('[')), pattern))
             {
                 result.Add(match.Value);
-            };
+            }
+
             return result;
         }
     }
